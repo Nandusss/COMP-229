@@ -1,2 +1,2 @@
 # COMP-229
- Comp 229 assignments and other works
+CONP-229 Assignment 1
