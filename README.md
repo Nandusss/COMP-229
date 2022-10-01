@@ -1,2 +1,2 @@
-# COMP-229
- Comp 229 assignments and other works
+# COMP229.018.F2022
+ COMP229 Code Examples
