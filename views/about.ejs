@@ -1,4 +1,22 @@
 <% include partials/header.ejs %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<div class="about-container">
+    <div class="self-image">
+        <img id="self-image" src="/images/selfimage">
+    </div>
+    <div class="self-summary" id="self-summary">
+        <h1>
+          Who am I?
+        </h1>
+        <p id="bulletpoints"> 
+        <p>
+    </div>
+    <div class="resume" id="resume">
+      <h1>
+        My Resume
+      </h1>
+      <span class="resume-doc" id="resume-doc">
+      </span>
+    </div>
+  </div>
+  <script src="/javascripts/about.js" type="module"></script>
 <% include partials/footer.ejs %>
