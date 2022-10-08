@@ -1,6 +1,8 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(214, 214, 214);
+  background: rgb(35, 52, 58);
 }
 
 a {
@@ -8,9 +10,26 @@ a {
 }
 
 
-.typer {
+.typer-area {
   display: flex;
+  color:rgb(237, 245, 252);
+  font-size: 35px;
+  font-family: Papyrus, fantasy;
+  font-weight: bolder;
   justify-content: center;
   align-items: center;
-  font-size: large;
+}
+
+.cursor {
+  display: inline-block;
+  content: "";
+  width: 7px;
+  height: 45px;
+  background: #ffffff;
+  animation: blink 1.15s steps(2) infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
