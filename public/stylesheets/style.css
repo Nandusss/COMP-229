@@ -1,3 +1,10 @@
+/* 
+ * style.css
+ * Nandagopan Dilip
+ * 301166925
+ * 08/10/2022
+ */
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -16,6 +23,7 @@ a {
   font-size: 35px;
   font-family: Papyrus, fantasy;
   font-weight: bolder;
+  word-spacing: 4px;
   justify-content: center;
   align-items: center;
 }
@@ -26,9 +34,10 @@ a {
   width: 7px;
   height: 45px;
   background: #ffffff;
-  animation: blink 1.15s steps(2) infinite;
+  animation: blink 1.15s steps(2) infinite; /*creating animation for the cursor*/
 }
 
+/* blinking animation for cursor */
 @keyframes blink {
   0% { opacity: 1; }
   100% { opacity: 0; }

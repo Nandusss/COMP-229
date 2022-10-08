@@ -18,7 +18,7 @@ else if(window.attachEvent)
 }
 
 function main() {
-    var msg = 'IMAGINATIONS  MADE  ALIVE';
+    var msg = "YOU IMAGINE, I CREATE";
     var speed = 80;
     var textArea = document.getElementById("typer");
     achieveTypeEffect(textArea, msg, speed);
