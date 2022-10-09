@@ -1,0 +1,243 @@
+/* 
+ * style.css
+ * Nandagopan Dilip
+ * 301166925
+ * 08/10/2022
+ */
+
+body {
+  padding: 0px;
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(214, 214, 214);
+  background: rgb(255, 255, 255);
+}
+
+a {
+  color: #00B7FF;
+}
+
+/*home page*/
+.home-container {
+  padding-top: 30px;
+  height: 100vh;
+  width: 100vw;
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(214, 214, 214);
+  background-image: url("/images/bghome.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+.typer-area {
+  display: flex;
+  color:rgb(237, 245, 252);
+  font-size: 35px;
+  font-family: Papyrus, fantasy;
+  font-weight: bolder;
+  word-spacing: 6px;
+  margin: 50px auto 30px auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.cursor {
+  display: inline-block;
+  content: "";
+  margin: 31px 0px 30px 4px;
+  width: 7px;
+  height: 45px;
+  background: #ffffff;
+  animation: blink 1.15s steps(2) infinite; /*creating animation for the cursor*/
+}
+
+.mission {
+  display: block;
+  background-color: rgb(59, 67, 70);
+  height: 30vh;
+  width: 100vw;
+  color:rgb(213 163 81);
+  font-size: 25px;
+  margin: 100px 10px 0px 0px;
+  padding: 20px 0px 0px 20px;
+}
+.welcome {
+  display: block;
+  text-align: center;
+  background-color: rgb(39, 52, 53);
+  height: 30vh;
+  width: 100vw;
+  color:rgb(96, 155, 101);
+  font-size: 25px;
+  margin: 0px 10px 100px 0px;
+  padding: 20px 20px 0px 0px;
+}
+
+/* blinking animation for cursor */
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/*about me page*/
+.about-container {
+  padding-top: 30px;
+  height: 100vh;
+  width: 100vw;
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(214, 214, 214);
+  background-image: url("/images/bgabout.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.self-image {
+  float: left;
+  height: 400px;
+  width: 300px;
+  margin: 50px 10px 50px 50px;
+}
+
+.self-summary {
+  color:rgb(226, 252, 255);
+  font-size: 25px;
+  margin: 200px 0px 100px 450px;
+  height: 200px;
+}
+
+.resume {
+  display: block;
+  float: left;
+  height: 100px;
+  color:rgb(226, 252, 255);
+  font-size: 25px;
+  margin:5px 0px 10px 20px;
+}
+
+/*projects page*/
+.projects-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  height: 100vh;
+  width: 100vw;
+  font: 23px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(214, 214, 214);
+  background-image: url("/images/bgprojects.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.desc {
+  font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(169, 114, 241);
+  text-align: center;
+}
+
+.project-images {
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  width: 500px;
+}
+
+/*services page*/
+
+.services-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  height: 100vh;
+  width: 100vw;
+  font: 23px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(214, 214, 214);
+  background-image: url("/images/bgprojects.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.heading {
+  margin-left: auto;
+  margin-right: auto;
+  color:rgb(241, 190, 114)
+}
+
+.services-body {
+  margin-left: auto;
+  margin-right: auto;
+  color:rgb(169, 114, 241)
+}
+
+.desc-services {
+  font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(32, 145, 28);
+  text-align: center;
+}
+
+.services-images {
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  width: 500px;
+}
+
+/*Contact page*/
+.contact-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  height: 100vh;
+  width: 100vw;
+  font: 23px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(214, 214, 214);
+  background-image: url("/images/bgprojects.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.contact-desc{
+  text-align: center;
+}
+
+.form {
+  display: block;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(56, 80, 78);
+  padding: 20px;
+  width: 75%;
+}
+
+
+input[type=text] {
+  display: block;
+  border: 2px solid rgb(54, 54, 54);
+  border-radius: 4px;
+  width: 50%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  resize: vertical;
+}
+
+select, textarea {
+  display: block;
+  border: 2px solid rgb(54, 54, 54);
+  border-radius: 4px;
+  width: 50%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  display: block;
+  background-color: #035895;
+  color: rgba(15, 11, 11, 0.586);
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  display: block;
+  background-color: rgb(9, 159, 51);
+}
