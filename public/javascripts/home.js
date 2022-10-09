@@ -5,7 +5,7 @@
  * 08/10/2022
  */
 
-import { achieveTypeEffect } from "./funcitons.js"; //importing the typing fuction
+import { achieveTypeEffect } from "./functions.js"; //importing the typing fuction
 
 //loading functions when the home page loads
 if(window.addEventListener)

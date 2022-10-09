@@ -5,7 +5,7 @@
  * 08/10/2022
  */
 
-import { achieveTypeEffect } from "./funcitons.js"; //importing the typing fuction
+import { showWordByWord } from "./functions.js"; //importing the typing fuction
 
 //loading functions when the home page loads
 if(window.addEventListener)
@@ -18,8 +18,8 @@ else if(window.attachEvent)
 }
 
 function main() {
-    var msg = "YOU IMAGINE, I CREATE";
-    var speed = 80;
-    var textArea = document.getElementById("typer");
-    achieveTypeEffect(textArea, msg, speed);
+    var msgs =  "Hi. I am Nandagopan Dilip. Currntly enrolled at Centennial College in the program Software Engineering Technology - Artificial Intelligence program. \n \n I have skills in the following fields: \n \t Software Engineering \n \t Web Developement \n \t Programming \n"
+    var speed = 250;
+    var typeArea = document.getElementById("self-points");
+    showWordByWord(typeArea, msgs, speed);
 }
