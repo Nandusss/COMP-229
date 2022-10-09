@@ -52,21 +52,21 @@ a {
 
 .mission {
   display: block;
-  background-color: rgb(70, 64, 59);
+  background-color: rgb(59, 67, 70);
   height: 30vh;
   width: 100vw;
-  color:rgb(226, 252, 255);
+  color:rgb(213 163 81);
   font-size: 25px;
   margin: 100px 10px 0px 0px;
   padding: 20px 0px 0px 20px;
 }
 .welcome {
   display: block;
-  text-align: right;
+  text-align: center;
   background-color: rgb(39, 52, 53);
   height: 30vh;
   width: 100vw;
-  color:rgb(226, 252, 255);
+  color:rgb(96, 155, 101);
   font-size: 25px;
   margin: 0px 10px 100px 0px;
   padding: 20px 20px 0px 0px;
@@ -94,13 +94,13 @@ a {
   float: left;
   height: 400px;
   width: 300px;
-  margin: 50px 10px 100px 50px;
+  margin: 50px 10px 50px 50px;
 }
 
 .self-summary {
   color:rgb(226, 252, 255);
   font-size: 25px;
-  margin: 200px 0px 150px 450px;
+  margin: 200px 0px 100px 450px;
   height: 200px;
 }
 
@@ -110,7 +110,7 @@ a {
   height: 100px;
   color:rgb(226, 252, 255);
   font-size: 25px;
-  margin:10px 0px 10px 20px;
+  margin:5px 0px 10px 20px;
 }
 
 /*projects page*/
@@ -156,7 +156,7 @@ a {
 .heading {
   margin-left: auto;
   margin-right: auto;
-  color:rgb(169, 114, 241)
+  color:rgb(241, 190, 114)
 }
 
 .services-body {
@@ -165,7 +165,7 @@ a {
   color:rgb(169, 114, 241)
 }
 
-.desc {
+.desc-services {
   font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: rgb(32, 145, 28);
   text-align: center;
@@ -176,4 +176,68 @@ a {
   margin-right: auto;
   height: 200px;
   width: 500px;
+}
+
+/*Contact page*/
+.contact-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  height: 100vh;
+  width: 100vw;
+  font: 23px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(214, 214, 214);
+  background-image: url("/images/bgprojects.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.contact-desc{
+  text-align: center;
+}
+
+.form {
+  display: block;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(56, 80, 78);
+  padding: 20px;
+  width: 75%;
+}
+
+
+input[type=text] {
+  display: block;
+  border: 2px solid rgb(54, 54, 54);
+  border-radius: 4px;
+  width: 50%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  resize: vertical;
+}
+
+select, textarea {
+  display: block;
+  border: 2px solid rgb(54, 54, 54);
+  border-radius: 4px;
+  width: 50%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  display: block;
+  background-color: #035895;
+  color: rgba(15, 11, 11, 0.586);
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  display: block;
+  background-color: rgb(9, 159, 51);
 }
