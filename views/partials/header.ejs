@@ -15,35 +15,54 @@
             </div>
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="navbar-brand" href="/"><i class="fa-solid fa-house"></i></a>
+                    <% if(title == "Home") { %>
+                        <a class="nav-link active" href="/">
+                    <% } else { %>
+                        <a class="nav-link" href="/">
+                    <% } %>
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                    </a>
                 </li>
                 <li class="nav-item">
                     <% if(title == "About") { %>
-                        <a class="nav-link active" href="/about">About Me</a>
+                        <a class="nav-link active" href="/about">
                     <% } else { %>
-                        <a class="nav-link" href="/about">About Me</a>
+                        <a class="nav-link" href="/about">
                     <% } %>
+                        <i class="fa-solid fa-address-card"></i>
+                        About Me
+                    </a>
                 </li>
                 <li class="nav-item">
                     <% if(title == "Projects") { %>
-                        <a class="nav-link active" href="/projects">Projects</a>
+                        <a class="nav-link active" href="/projects">
                     <% } else { %>
-                    <a class="nav-link" href="/projects">Projects</a>
+                    <a class="nav-link" href="/projects">
                     <% } %>
+                        <i class="fa-solid fa-diagram-project"></i>
+                        Projects
+                    </a>
                 </li>
                 <li class="nav-item">
                     <% if(title == "Services") { %>
-                        <a class="nav-link active" href="/services">Services</a>
+                        <a class="nav-link active" href="/services">
                     <% } else { %>
-                        <a class="nav-link" href="/services">Services</a>
+                        <a class="nav-link" href="/services">
                     <% } %>
+                        <i class="fa-solid fa-briefcase"></i>
+                        Services
+                    </a>
                 </li>
                 <li class="nav-item">
                     <% if(title == "Contact") { %>
-                        <a class="nav-link active" href="/contact">Contact Me</a>
+                        <a class="nav-link active" href="/contact">
                     <% } else { %>
-                        <a class="nav-link" href="/contact">Contact Me</a>
+                        <a class="nav-link" href="/contact">
                     <% } %>
+                        <i class="fa-solid fa-address-book"></i>
+                        Contact Me
+                    </a>
                 </li>
             </ul>
         </div>
