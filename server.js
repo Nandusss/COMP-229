@@ -7,6 +7,12 @@
 var app = require('./config/app');
 var debug = require('debug')('comp.229:server');
 var http = require('http');
+var dbConfig = require('./config/db');
+
+/**
+ * Connect to database
+ */
+var db = dbConfig();
 
 /**
  * Get port from environment and store in Express.
