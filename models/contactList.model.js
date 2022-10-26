@@ -15,4 +15,4 @@ let contactListModel = mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('inventory', contactListModel);
+module.exports = mongoose.model('contactlist', contactListModel);

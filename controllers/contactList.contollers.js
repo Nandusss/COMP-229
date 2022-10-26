@@ -1,5 +1,6 @@
 //reference to model
-let contactList = require('../models/contactslist.model');
+let contactList = require('../models/contactList.model');
+
 
 //exporting model view
 module.exports.contactList = function(req, res, next) {
@@ -11,7 +12,7 @@ module.exports.contactList = function(req, res, next) {
             }
             else {
                 res.render(
-                    'contacts/list', {
+                    'contactlist/list', {
                             title: 'Contact List',
                             ContactList: contactList
                     }
@@ -20,3 +21,4 @@ module.exports.contactList = function(req, res, next) {
         }
     );
 }
+

@@ -2,7 +2,7 @@
  * controller which controlls all the pages that are displayed
  */
 
-exports.home = function(req, res, next) {
+module.exports.home = function(req, res, next) {
     res.render(
         'index', 
         { 
@@ -11,7 +11,7 @@ exports.home = function(req, res, next) {
     );
   }
 
-exports.about = function(req, res, next) {
+module.exports.about = function(req, res, next) {
     res.render(
         'about', 
         { 
@@ -20,7 +20,7 @@ exports.about = function(req, res, next) {
     );
   }
 
-  exports.projects = function(req, res, next) {
+module.exports.projects = function(req, res, next) {
     res.render(
         'projects', 
         {
@@ -29,7 +29,7 @@ exports.about = function(req, res, next) {
     );
   }
 
-  exports.services = function(req, res, next) {
+module.exports.services = function(req, res, next) {
     res.render(
         'services',
         { 
@@ -38,7 +38,7 @@ exports.about = function(req, res, next) {
     );
   }
 
-  exports.contact = function(req, res, next) {
+module.exports.contact = function(req, res, next) {
     res.render(
         'contact', 
         { 
