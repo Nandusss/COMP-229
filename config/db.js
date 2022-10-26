@@ -9,8 +9,10 @@ module.exports = function() {
     
     let mongoDB = mongoose.connection;
     
+    // Error handling
+    mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
 
-
+    // Test connection
     mongoDB.once('open', () => {
             console.log('=== Connected To DataBase Successfully ===');
         }

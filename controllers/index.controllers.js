@@ -1,4 +1,7 @@
-//controller which controlls all the pages that are displayed
+/**
+ * controller which controlls all the pages that are displayed
+ */
+
 exports.home = function(req, res, next) {
     res.render(
         'index', 
