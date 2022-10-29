@@ -1,3 +1,10 @@
+/* *
+ * db.js
+ * Nandagopan Dilip
+ * 301166925
+ * 29/10/2022
+ */
+
 // Exposing the credentials only for academic purposes, Please do not follow this practise in real world functionalities
 let dbURI = "mongodb+srv://dbuser:LSIeKcwTMG0hfwDd@cluster1.m8kzbry.mongodb.net/contacts?retryWrites=true&w=majority";
 

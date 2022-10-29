@@ -1,3 +1,10 @@
+/* *
+ * user.js
+ * Nandagopan Dilip
+ * 301166925
+ * 29/10/2022
+ */
+
 let mongoose = require('mongoose');
 let crypto = require('crypto');
 let Schema = mongoose.Schema;

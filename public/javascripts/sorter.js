@@ -4,16 +4,18 @@
 // }
 
 //sorting the table
-module.exports.sorter =  function arraySort(array, sortByItem) 
+
+function arraySort(array) 
 {
     for(let i = 0; i < array.length; i++)
     {
-        alert(array.sortByItem[i]);
-        if(array.sortByItem[i] > array.sortByItem[i+1])
+        if(array.name[i] > array.name[i+1])
         {
-            let swap = array.sortByItem[i];
-            array.sortByItem[i] = array.sortByItem[i+1];
-            array.sortByItem[i+1] = swap;
+            let swap = array.name[i];
+            array.name[i] = array.name[i+1];
+            array.name[i+1] = swap;
         }
     }
 }
+
+module.exports.sorter =  arraySort;

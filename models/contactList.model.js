@@ -1,3 +1,10 @@
+/* *
+ * contactList.model.js
+ * Nandagopan Dilip
+ * 301166925
+ * 29/10/2022
+ */
+
 /**
  * Creating contact list db model
  */

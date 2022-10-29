@@ -1,9 +1,16 @@
+/* *
+ * app.js
+ * Nandagopan Dilip
+ * 301166925
+ * 29/10/2022
+ * all credits goes to prof. Júlio Vinícius Azevedo de Carvalho
+ */
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-let bodyParser = require('body-parser');
 let session = require('express-session');
 let flash = require('connect-flash');
 let passport = require('passport');

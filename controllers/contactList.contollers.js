@@ -2,6 +2,7 @@
 let contactList = require('../models/contactList.model');
 let sorter = require('../public/javascripts/sorter');
 
+
 //exporting model view
 module.exports.contactList = function(req, res, next) {
     contactList.find(
@@ -11,11 +12,17 @@ module.exports.contactList = function(req, res, next) {
                 return console.error(err);
             }
             else {
+            // sorter.sorter(contactList);
                 res.render(
                     'contactlist/list', {
                             title: 'Contact List',
-                            ContactList: contactList,
-                            sorter : sorter
+                            //sorting using sort method. credit https://stackoverflow.com/a/8900824
+                            ContactList: contactList.sort(function(a, b) {
+                                var textA = a.name.toUpperCase();
+                                var textB = b.name.toUpperCase();
+                                return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                            }),
+                            userName: req.user ? req.user.username : ''
                     }
                 );
             }
@@ -23,7 +30,7 @@ module.exports.contactList = function(req, res, next) {
     );
 }
 
-// Edit the values using add_edit page. Only provide access if signed in
+// Display the  add_edit page. Only provide access if signed in
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
 
@@ -33,14 +40,7 @@ module.exports.displayEditPage = (req, res, next) => {
             {
                 console.log(err);
                 res.end(err);
-            }
-            if (!req.user) {
-                res.render('auth/signin', {
-                  title: 'Sign In',
-                  messages: req.flash('error') || req.flash('info')
-                });
-            }
-             
+            }            
             else 
             {
                 console.log(req.user);
@@ -48,7 +48,8 @@ module.exports.displayEditPage = (req, res, next) => {
                 res.render(
                     'contactlist/add_edit', {
                         title: 'Edit Item', 
-                        item: itemToEdit
+                        item: itemToEdit,
+                        userName: req.user ? req.user.username : ''
                     }
                 )
             }
@@ -87,23 +88,14 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.displayAddPage = (req, res, next) => {
     let newItem = contactList();
 
-    if (!req.user) {
-        res.render('auth/signin', {
-          title: 'Sign In',
-          messages: req.flash('error') || req.flash('info')
-        });
-    } 
-    else 
-    {
-        console.log(req.user);
-        //show the edit view
-        res.render(
-            'contactlist/add_edit', {
-                title: 'Add Item',
-                item: newItem
-            }
-        )
-    }         
+    console.log(req.user);
+    //show the edit view
+    res.render(
+        'contactlist/add_edit', {
+            title: 'Add Item',
+            item: newItem
+        }
+    )       
 }
 
 //perform a create function over database
@@ -136,27 +128,18 @@ module.exports.processAddPage = (req, res, next) => {
 //perform a delete fuction over database if user is signed in
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
-    if (!req.user) {
-        res.render('auth/signin', {
-          title: 'Sign In',
-          messages: req.flash('error') || req.flash('info')
-        });
-    } 
-    else 
-    {
-        contactList.remove(
-            {_id: id}, (err) => {
-                if(err)
-                {
-                    console.log(err);
-                    res.end(err);
-                }
-                else
-                {
-                    // refresh the contact list
-                    res.redirect('/contactlist/list');
-                }
+    contactList.remove(
+        {_id: id}, (err) => {
+            if(err)
+            {
+                console.log(err);
+                res.end(err);
             }
-        );
-    }
+            else
+            {
+                // refresh the contact list
+                res.redirect('/contactlist/list');
+            }
+        }
+    );
 }
