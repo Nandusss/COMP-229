@@ -23,7 +23,7 @@ module.exports.contactList = function(req, res, next) {
     );
 }
 
-// Edit the values using add_edit page. Only provide access if signed in
+// Display the  add_edit page. Only provide access if signed in
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
 
