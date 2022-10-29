@@ -2,6 +2,7 @@
 let contactList = require('../models/contactList.model');
 let sorter = require('../public/javascripts/sorter');
 
+
 //exporting model view
 module.exports.contactList = function(req, res, next) {
     contactList.find(
@@ -11,11 +12,16 @@ module.exports.contactList = function(req, res, next) {
                 return console.error(err);
             }
             else {
+            // sorter.sorter(contactList);
                 res.render(
                     'contactlist/list', {
                             title: 'Contact List',
-                            ContactList: contactList,
-                            sorter : sorter,
+                            //sorting using sort method. credit https://stackoverflow.com/a/8900824
+                            ContactList: contactList.sort(function(a, b) {
+                                var textA = a.name.toUpperCase();
+                                var textB = b.name.toUpperCase();
+                                return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                            }),
                             userName: req.user ? req.user.username : ''
                     }
                 );

@@ -9,7 +9,7 @@ body {
   padding: 0px;
   font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: rgb(214, 214, 214);
-  background: rgb(255, 255, 255);
+  background: #1D2038;
 }
 
 a {
@@ -240,6 +240,26 @@ input[type=submit] {
 input[type=submit]:hover {
   display: block;
   background-color: rgb(9, 159, 51);
+}
+
+/*signin and signup page*/
+.container {
+  padding-top: 50px;
+  height: 100vh;
+  width: 100vw;
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #1D2038;
+  background-position: center;
+  background-size: cover;
+}
+
+#contactListTable td {
+  color:rgb(29, 148, 148)
+}
+
+#contactListTable th {
+  color:rgb(86, 148, 29);
+  font-size: 16px;
 }
 
 .flash {

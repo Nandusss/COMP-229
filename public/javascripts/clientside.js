@@ -1,5 +1,5 @@
 /* *
- * client.js
+ * clientside.js
  * Nandagopan Dilip
  * 301166925
  * 29/10/2022
