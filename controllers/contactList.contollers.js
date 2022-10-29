@@ -15,7 +15,8 @@ module.exports.contactList = function(req, res, next) {
                     'contactlist/list', {
                             title: 'Contact List',
                             ContactList: contactList,
-                            sorter : sorter
+                            sorter : sorter,
+                            userName: req.user ? req.user.username : ''
                     }
                 );
             }
@@ -33,14 +34,7 @@ module.exports.displayEditPage = (req, res, next) => {
             {
                 console.log(err);
                 res.end(err);
-            }
-            if (!req.user) {
-                res.render('auth/signin', {
-                  title: 'Sign In',
-                  messages: req.flash('error') || req.flash('info')
-                });
-            }
-             
+            }            
             else 
             {
                 console.log(req.user);
@@ -48,7 +42,8 @@ module.exports.displayEditPage = (req, res, next) => {
                 res.render(
                     'contactlist/add_edit', {
                         title: 'Edit Item', 
-                        item: itemToEdit
+                        item: itemToEdit,
+                        userName: req.user ? req.user.username : ''
                     }
                 )
             }
@@ -87,23 +82,14 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.displayAddPage = (req, res, next) => {
     let newItem = contactList();
 
-    if (!req.user) {
-        res.render('auth/signin', {
-          title: 'Sign In',
-          messages: req.flash('error') || req.flash('info')
-        });
-    } 
-    else 
-    {
-        console.log(req.user);
-        //show the edit view
-        res.render(
-            'contactlist/add_edit', {
-                title: 'Add Item',
-                item: newItem
-            }
-        )
-    }         
+    console.log(req.user);
+    //show the edit view
+    res.render(
+        'contactlist/add_edit', {
+            title: 'Add Item',
+            item: newItem
+        }
+    )       
 }
 
 //perform a create function over database
@@ -136,27 +122,18 @@ module.exports.processAddPage = (req, res, next) => {
 //perform a delete fuction over database if user is signed in
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
-    if (!req.user) {
-        res.render('auth/signin', {
-          title: 'Sign In',
-          messages: req.flash('error') || req.flash('info')
-        });
-    } 
-    else 
-    {
-        contactList.remove(
-            {_id: id}, (err) => {
-                if(err)
-                {
-                    console.log(err);
-                    res.end(err);
-                }
-                else
-                {
-                    // refresh the contact list
-                    res.redirect('/contactlist/list');
-                }
+    contactList.remove(
+        {_id: id}, (err) => {
+            if(err)
+            {
+                console.log(err);
+                res.end(err);
             }
-        );
-    }
+            else
+            {
+                // refresh the contact list
+                res.redirect('/contactlist/list');
+            }
+        }
+    );
 }

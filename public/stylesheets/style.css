@@ -241,3 +241,7 @@ input[type=submit]:hover {
   display: block;
   background-color: rgb(9, 159, 51);
 }
+
+.flash {
+  color: red;
+}

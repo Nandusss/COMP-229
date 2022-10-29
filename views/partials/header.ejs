@@ -69,21 +69,22 @@
                     </ul>
                 </li>
                 
-                <!-- nav bar button for sign in and sign up -->
-                <li class="nav-item dropdown">
-                    <% if(title == "Sign In" || title == "Sign Up") { %>
-                        <a class="nav-link dropdown-toggle active" href="/user" role="button" data-bs-toggle="dropdown">
-                    <% } else { %>
+                <!-- nav bar button for sign in and sign up --> 
+                <% if (typeof userName == 'string' && userName) { %>
+                      <a class="nav-link" href="/user/signout" onclick="return confirm('Are you sure?')"><i class="fa fa-door-open"></i> Sign-Out (<%= userName %>)</a>
+                <% } else { %> 
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="/user" role="button" data-bs-toggle="dropdown">
-                    <% } %>
-                    <i class="fa-solid fa-user-plus"></i>
-                    Account
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="/user/signin">Sign In</a></li>
-                      <li><a class="dropdown-item" href="/user/signup">Sign Up</a></li>
-                    </ul>
-                </li>
+                        <i class="fa-solid fa-user-plus"></i>
+                        Account
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/user/signin"><i class="fa fa-door-closed"></i>Sign In</a></li>
+                            <li><a class="dropdown-item" href="/user/signup"><i class="fa fa-door-closed"></i>Sign Up</a></li>
+                        </ul>
+                    </li>
+                <% } %>
+
                 <li class="nav-item">
                     <% if(title == "Contact") { %>
                         <a class="nav-link active" href="/contact">

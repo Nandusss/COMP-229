@@ -49,7 +49,8 @@ module.exports.renderSignup = function(req, res, next) {
     res.render('auth/signup', {
       title: 'Sign Up',
       messages: req.flash('error'),
-      user: newUser
+      user: newUser,
+      userName: req.user ? req.user.username : ''
     });
 
   } 
@@ -76,7 +77,8 @@ module.exports.signup = function(req, res, next) {
         return res.render('auth/signup', {
           title: 'Sign Up',
           messages: req.flash('error'),
-          user: user
+          user: user,
+          userName: req.user ? req.user.username : ''
         });
       }
       req.login(user, (err) => {
