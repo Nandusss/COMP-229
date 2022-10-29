@@ -58,7 +58,7 @@
                     <% if(title == "Contact List" || title == "Edit Item" || title == "Add Item") { %>
                         <a class="nav-link dropdown-toggle active" href="/contactlist" role="button" data-bs-toggle="dropdown">
                     <% } else { %>
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="/contactlist" role="button" data-bs-toggle="dropdown">
                     <% } %>
                     <i class="fa-solid fa-list"></i>
                     Contact List
@@ -66,6 +66,22 @@
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="/contactlist/list">View List</a></li>
                       <li><a class="dropdown-item" href="/contactlist/add">Add Items</a></li>
+                    </ul>
+                </li>
+                
+                <!-- nav bar button for sign in and sign up -->
+                <li class="nav-item dropdown">
+                    <% if(title == "Sign In" || title == "Sign Up") { %>
+                        <a class="nav-link dropdown-toggle active" href="/user" role="button" data-bs-toggle="dropdown">
+                    <% } else { %>
+                        <a class="nav-link dropdown-toggle" href="/user" role="button" data-bs-toggle="dropdown">
+                    <% } %>
+                    <i class="fa-solid fa-user-plus"></i>
+                    Account
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/user/signin">Sign In</a></li>
+                      <li><a class="dropdown-item" href="/user/signup">Sign Up</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
