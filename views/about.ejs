@@ -3,8 +3,8 @@ Nandagopan Dilip
 about.ejs
 10/08/2022
 -->
-<% include partials/header.ejs %>
-<div class="about-container">
+<%- include ('partials/header') %>
+  <div class="about-container">
     <div class="self-image">
         <img class="self-image" id="self-image" src="/images/selfimage.jpg" alt="picture of me"/>
     </div>
@@ -28,4 +28,4 @@ about.ejs
     </div>
   </div>
   <script src="/javascripts/about.js" type="module"></script>
-<% include partials/footer.ejs %>
+<%- include ('partials/footer') %>

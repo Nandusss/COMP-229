@@ -80,7 +80,7 @@ module.exports.displayAddPage = (req, res, next) => {
 
     res.render(
         'contactlist/add_edit', {
-            title: 'Add a new Item',
+            title: 'Add Item',
             item: newItem
         }
     )          
