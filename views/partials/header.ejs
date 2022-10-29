@@ -71,7 +71,9 @@
                 
                 <!-- nav bar button for sign in and sign up --> 
                 <% if (typeof userName == 'string' && userName) { %>
-                      <a class="nav-link" href="/user/signout" onclick="return confirm('Are you sure?')"><i class="fa fa-door-open"></i> Sign-Out (<%= userName %>)</a>
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="/user/signout" onclick="return confirm('Are you sure?')"><i class="fa fa-door-open"></i> Sign-Out (<%= userName %>)</a>
+                    </li>
                 <% } else { %> 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="/user" role="button" data-bs-toggle="dropdown">
