@@ -85,7 +85,7 @@ module.exports.signup = function(req, res, next) {
         if (err) { 
           return next(err);
         }
-        return res.redirect('/');
+        return res.redirect('/contactlist/list');
       });
     });
   }
