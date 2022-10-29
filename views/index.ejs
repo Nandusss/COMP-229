@@ -3,7 +3,7 @@ Nandagopan Dilip
 index.ejs
 10/08/2022
 -->
-<% include partials/header.ejs %>
+<%- include ('partials/header') %>
   <div class="home-container">
     <div class="typer-area" id="typer-area">
     <span class="typer" id="typer"></span>
@@ -32,5 +32,5 @@ index.ejs
     </div>
   </div>
   <script src="/javascripts/home.js" type="module"></script>
-<% include partials/footer.ejs %>
+<%- include ('partials/footer') %>
 
