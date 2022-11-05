@@ -1,29 +1,38 @@
 //reference to model
 let contactList = require('../models/contactList.model');
 
+//get the error message
+function getErrorMessage(err) {    
+    if (err.errors) {
+        for (let errName in err.errors) {
+            if (err.errors[errName].message) return err.errors[errName].message;
+        }
+    } 
+    if (err.message) {
+        return err.message;
+    } else {
+        return 'Unknown server error';
+    }
+};
 
 //exporting model view
 module.exports.contactList = function(req, res, next) {
     contactList.find(
         (err, contactList) => {
-            //error handling
-            if(err) {
-                return console.error(err);
-            }
-            else {
-            // sorter.sorter(contactList);
-                res.render(
-                    'contactlist/list', {
-                            title: 'Contact List',
-                            //sorting using sort method. credit https://stackoverflow.com/a/8900824
-                            ContactList: contactList.sort(function(a, b) {
-                                var textA = a.name.toUpperCase();
-                                var textB = b.name.toUpperCase();
-                                return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-                            }),
-                            userName: req.user ? req.user.username : ''
+            if(err)
+            {
+                console.error(err);
+    
+                res.status(400).json(
+                    {
+                        success: false,
+                        message: getErrorMessage(err)
                     }
-                );
+                )
+            }
+            else
+            {
+                res.status(200).json(contactList);            
             }
         }
     );
