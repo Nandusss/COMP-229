@@ -1,6 +1,5 @@
 //reference to model
 let contactList = require('../models/contactList.model');
-let sorter = require('../public/javascripts/sorter');
 
 
 //exporting model view
